@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../../../img/favicon.ico">
+  <title>IUniswapV2Router - Unifi Docs</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../../css/theme.css" />
+  <link rel="stylesheet" href="../../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "IUniswapV2Router";
+    var mkdocs_page_input_path = "stableCoin/standalone/IUniswapV2Router.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/typescript.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/javascript.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../../.." class="icon icon-home"> Unifi Docs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../..">Home</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../CONTRIBUTING/">Contributing</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">API</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Stable Coin</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../IDoubleProxy/">IDoubleProxy</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../IMVDFunctionalitiesManager/">IMVDFunctionalitiesManager</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../IMVDProxy/">IMVDProxy</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../IStateHolder/">IStateHolder</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../IStableCoin/">IStableCoin</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Microservices</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../microservices/MintNewVotingTokensForStableCoinFunctionality/">MintNewVotingTokensForStableCoinFunctionality</a>
+                </li>
+    </ul>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../..">Unifi Docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>IUniswapV2Router</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="iuniswapv2router">IUniswapV2Router</h1>
+<p>Route liquidity back and forth an Uniswap Liquidity Pool.
+For more information see: https://uniswap.org/docs/v2/smart-contracts/router02/</p>
+<h2 id="functions">Functions:</h2>
+<ul>
+<li><a href="#function-getamountsout"><code>getAmountsOut(uint256 amountIn, address[] path)</code></a></li>
+<li><a href="#function-removeliquidity"><code>removeLiquidity(address tokenA, address tokenB, uint256 liquidity, uint256 amountAMin, uint256 amountBMin, address to, uint256 deadline)</code></a></li>
+<li><a href="#function-addliquidity"><code>addLiquidity(address tokenA, address tokenB, uint256 amountADesired, uint256 amountBDesired, uint256 amountAMin, uint256 amountBMin, address to, uint256 deadline)</code></a></li>
+</ul>
+<h3 id="function-getamountsout">Function: getAmountsOut</h3>
+<p><code>getAmountsOut(uint256 amountIn, address[] path) → uint256[] amounts</code></p>
+<h3 id="function-removeliquidity">Function: removeLiquidity</h3>
+<p><code>removeLiquidity(address tokenA, address tokenB, uint256 liquidity, uint256 amountAMin, uint256 amountBMin, address to, uint256 deadline) → uint256 amountA, uint256 amountB</code></p>
+<h4 id="description">Description</h4>
+<p>Removes liquidity from an ERC-20⇄ERC-20 pool
+https://uniswap.org/docs/v2/smart-contracts/router02/#addliquidity
+=====</p>
+<h4 id="parameters">Parameters:</h4>
+<ul>
+<li>
+<p><code>tokenA</code>: A pool token</p>
+</li>
+<li>
+<p><code>tokenB</code>: A pool token</p>
+</li>
+<li>
+<p><code>liquidity</code>: The amount of liquidity tokens to remove</p>
+</li>
+<li>
+<p><code>amountAMin</code>: The minimum amount of tokenA that must be received for the transaction not to revert</p>
+</li>
+<li>
+<p><code>amountBMin</code>: The minimum amount of tokenB that must be received for the transaction not to revert</p>
+</li>
+<li>
+<p><code>to</code>: Recipient of the underlying assets</p>
+</li>
+</ul>
+<h1 id="-deadline-unix-timestamp-after-which-the-transaction-will-revert">- <code>deadline</code>: Unix timestamp after which the transaction will revert</h1>
+<h4 id="return-values">Return Values:</h4>
+<ul>
+<li>
+<p>amountA The amount of tokenA received</p>
+</li>
+<li>
+<p>amountB The amount of tokenB received</p>
+</li>
+</ul>
+<h3 id="function-addliquidity">Function: addLiquidity</h3>
+<p><code>addLiquidity(address tokenA, address tokenB, uint256 amountADesired, uint256 amountBDesired, uint256 amountAMin, uint256 amountBMin, address to, uint256 deadline) → uint256 amountA, uint256 amountB, uint256 liquidity</code></p>
+<h4 id="description_1">Description</h4>
+<p>Add Liquidity to an ERC-20⇄ERC-20 pool
+- To cover all possible scenarios, msg.sender should have already given the router an allowance
+of at least amountADesired/amountBDesired on tokenA/tokenB.
+- Always adds assets at the ideal ratio, according to the price when the transaction is executed.
+- If a pool for the passed tokens does not exists, one is created automatically, and exactly
+amountADesired/amountBDesired tokens are added.
+https://uniswap.org/docs/v2/smart-contracts/router02/#addliquidity
+=====</p>
+<h4 id="parameters_1">Parameters:</h4>
+<ul>
+<li>
+<p><code>tokenA</code>: A pool token</p>
+</li>
+<li>
+<p><code>tokenB</code>: A pool token</p>
+</li>
+<li>
+<p><code>liquidity</code>: The amount of liquidity tokens to remove</p>
+</li>
+<li>
+<p><code>amountADesired</code>: The amount of tokenA to add as liquidity if the B/A price is &lt;=
+amountBDesired/amountADesired (A depreciates).</p>
+</li>
+<li>
+<p><code>amountBDesired</code>: The amount of tokenB to add as liquidity if the A/B price is &lt;=
+amountADesired/amountBDesired (B depreciates).</p>
+</li>
+<li>
+<p><code>amountAMin</code>: Bounds the extent to which the B/A price can go up before the transaction reverts. Must be &lt;= amountADesired.</p>
+</li>
+<li>
+<p><code>amountBMin</code>: Bounds the extent to which the A/B price can go up before the transaction reverts. Must be &lt;= amountBDesired.</p>
+</li>
+<li>
+<p><code>to</code>: Recipient of the underlying assets</p>
+</li>
+</ul>
+<h1 id="-deadline-unix-timestamp-after-which-the-transaction-will-revert_1">- <code>deadline</code>: Unix timestamp after which the transaction will revert</h1>
+<h4 id="return-values_1">Return Values:</h4>
+<ul>
+<li>
+<p>amountA The amount of tokenA sent to the pool</p>
+</li>
+<li>
+<p>amountB The amount of tokenB sent to the pool</p>
+</li>
+<li>
+<p>liquidity The amount of liquidity tokens minted</p>
+</li>
+</ul>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+      
+    </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme.js" defer></script>
+      <script src="../../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

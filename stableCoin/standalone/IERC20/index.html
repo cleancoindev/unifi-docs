@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../../../img/favicon.ico">
+  <title>IERC20 - Unifi Docs</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../../css/theme.css" />
+  <link rel="stylesheet" href="../../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "IERC20";
+    var mkdocs_page_input_path = "stableCoin/standalone/IERC20.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/typescript.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/javascript.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../../.." class="icon icon-home"> Unifi Docs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../..">Home</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../CONTRIBUTING/">Contributing</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">API</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Stable Coin</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../IDoubleProxy/">IDoubleProxy</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../IMVDFunctionalitiesManager/">IMVDFunctionalitiesManager</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../IMVDProxy/">IMVDProxy</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../IStateHolder/">IStateHolder</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../IStableCoin/">IStableCoin</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Microservices</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../microservices/MintNewVotingTokensForStableCoinFunctionality/">MintNewVotingTokensForStableCoinFunctionality</a>
+                </li>
+    </ul>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../..">Unifi Docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>IERC20</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="ierc20">IERC20</h1>
+<p>Interface of the ERC20 standard as defined in the EIP.</p>
+<h2 id="functions">Functions:</h2>
+<ul>
+<li><a href="#function-totalsupply"><code>totalSupply()</code></a></li>
+<li><a href="#function-balanceof"><code>balanceOf(address account)</code></a></li>
+<li><a href="#function-transfer"><code>transfer(address recipient, uint256 amount)</code></a></li>
+<li><a href="#function-allowance"><code>allowance(address owner, address spender)</code></a></li>
+<li><a href="#function-approve"><code>approve(address spender, uint256 amount)</code></a></li>
+<li><a href="#function-transferfrom"><code>transferFrom(address sender, address recipient, uint256 amount)</code></a></li>
+</ul>
+<h2 id="events">Events:</h2>
+<ul>
+<li><a href="#event-transfer"><code>Transfer(address from, address to, uint256 value)</code></a></li>
+<li><a href="#event-approval"><code>Approval(address owner, address spender, uint256 value)</code></a></li>
+</ul>
+<h3 id="function-totalsupply">Function: totalSupply</h3>
+<p><code>totalSupply() → uint256</code></p>
+<h4 id="description">Description</h4>
+<p>Returns the amount of tokens in existence.</p>
+<h3 id="function-balanceof">Function: balanceOf</h3>
+<p><code>balanceOf(address account) → uint256</code></p>
+<h4 id="description_1">Description</h4>
+<p>Returns the amount of tokens owned by <code>account</code>.</p>
+<h3 id="function-transfer">Function: transfer</h3>
+<p><code>transfer(address recipient, uint256 amount) → bool</code></p>
+<h4 id="description_2">Description</h4>
+<p>Moves <code>amount</code> tokens from the caller's account to <code>recipient</code>.
+Returns a boolean value indicating whether the operation succeeded.
+Emits a {Transfer} event.</p>
+<h3 id="function-allowance">Function: allowance</h3>
+<p><code>allowance(address owner, address spender) → uint256</code></p>
+<h4 id="description_3">Description</h4>
+<p>Returns the remaining number of tokens that <code>spender</code> will be
+allowed to spend on behalf of <code>owner</code> through {transferFrom}. This is
+zero by default.
+This value changes when {approve} or {transferFrom} are called.</p>
+<h3 id="function-approve">Function: approve</h3>
+<p><code>approve(address spender, uint256 amount) → bool</code></p>
+<h4 id="description_4">Description</h4>
+<p>Sets <code>amount</code> as the allowance of <code>spender</code> over the caller's tokens.
+Returns a boolean value indicating whether the operation succeeded.
+IMPORTANT: Beware that changing an allowance with this method brings the risk
+that someone may use both the old and the new allowance by unfortunate
+transaction ordering. One possible solution to mitigate this race
+condition is to first reduce the spender's allowance to 0 and set the
+desired value afterwards:
+https://github.com/ethereum/EIPs/issues/20#issuecomment-263524729
+Emits an {Approval} event.</p>
+<h3 id="function-transferfrom">Function: transferFrom</h3>
+<p><code>transferFrom(address sender, address recipient, uint256 amount) → bool</code></p>
+<h4 id="description_5">Description</h4>
+<p>Moves <code>amount</code> tokens from <code>sender</code> to <code>recipient</code> using the
+allowance mechanism. <code>amount</code> is then deducted from the caller's
+allowance.
+Returns a boolean value indicating whether the operation succeeded.
+Emits a {Transfer} event.</p>
+<h3 id="event-transfer">Event: Transfer</h3>
+<p><code>Transfer(address from, address to, uint256 value)</code></p>
+<h4 id="description_6">Description</h4>
+<p>Emitted when <code>value</code> tokens are moved from one account (<code>from</code>) to
+another (<code>to</code>).
+Note that <code>value</code> may be zero.</p>
+<h3 id="event-approval">Event: Approval</h3>
+<p><code>Approval(address owner, address spender, uint256 value)</code></p>
+<h4 id="description_7">Description</h4>
+<p>Emitted when the allowance of a <code>spender</code> for an <code>owner</code> is set by
+a call to {approve}. <code>value</code> is the new allowance.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+      
+    </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme.js" defer></script>
+      <script src="../../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
