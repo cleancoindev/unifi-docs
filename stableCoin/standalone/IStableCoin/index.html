@@ -71,42 +71,6 @@
                 <li class="toctree-l2"><a class="reference internal" href="../IStateHolder/">IStateHolder</a>
                 </li>
                 <li class="toctree-l2 current"><a class="reference internal current" href="./">IStableCoin</a>
-    <ul class="current">
-    <li class="toctree-l3"><a class="reference internal" href="#functions">Functions:</a>
-        <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#function-init">Function: init</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#function-allowedpairs">Function: allowedPairs</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#function-availabletomint">Function: availableToMint</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#function-differences">Function: differences</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#function-doubleproxy">Function: doubleProxy</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#function-rebalancerewardmultiplier">Function: rebalanceRewardMultiplier</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#function-tierdata">Function: tierData</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#function-setallowedpairs">Function: setAllowedPairs</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#function-setdoubleproxy">Function: setDoubleProxy</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#function-calculaterebalancebydebtreward">Function: calculateRebalanceByDebtReward</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#function-fromtokentostable">Function: fromTokenToStable</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#function-mint">Function: mint</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#function-burn">Function: burn</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#function-rebalancebycredit">Function: rebalanceByCredit</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#function-rebalancebydebt">Function: rebalanceByDebt</a>
-    </li>
-        </ul>
-    </li>
-    </ul>
                 </li>
     </ul>
                     </li>
@@ -157,35 +121,34 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="istablecoin">IStableCoin</h1>
-<p>Define the interface for the usD</p>
-<h2 id="functions">Functions:</h2>
+                <p>L1E</p>
+<p>Define the interface for the $usD
+The core idea behind Unified Stable Coin is to implement a stable coin collateralized by pools of whitelisted
+stable coins on UniSwap. By hedging across several pools and implementing simple yet effective
+rebalancing schemes, $uSD is able reduce an holder exposure to a stable-coin failure.</p>
+<p>L1E
+- [<code>init(string name, string symbol, address doubleProxy, address[] allowedPairs, uint256[] rebalanceRewardMultiplier, uint256[] timeWindows, uint256[] mintables)</code>](L1E
+- [<code>allowedPairs()</code>](L1E
+- [<code>availableToMint()</code>](L1E
+- [<code>differences()</code>](L1E
+- [<code>doubleProxy()</code>](L1E
+- [<code>rebalanceRewardMultiplier()</code>](L1E
+- [<code>tierData()</code>](L1E
+- [<code>setAllowedPairs(address[] newAllowedPairs)</code>](L1E
+- [<code>setDoubleProxy(address newDoubleProxy)</code>](L1E
+- [<code>calculateRebalanceByDebtReward(uint256 burnt)</code>](L1E
+- [<code>fromTokenToStable(address tokenAddress, uint256 amount)</code>](L1E
+- [<code>mint(uint256 pairIndex, uint256 amountA, uint256 amountB, uint256 amountAMin, uint256 amountBMin)</code>](L1E
+- [<code>burn(uint256 pairIndex, uint256 pairAmount, uint256 amountAMin, uint256 amountBMin)</code>](L1E
+- [<code>rebalanceByCredit(uint256 pairIndex, uint256 pairAmount, uint256 amountA, uint256 amountB)</code>](L1E
+- [<code>rebalanceByDebt(uint256 amount)</code>](L1E</p>
+<p>L1E
+<code>init(string name, string symbol, address doubleProxy, address[] allowedPairs, uint256[] rebalanceRewardMultiplier, uint256[] timeWindows, uint256[] mintables)</code>
+L1E
+Constructor signature</p>
+<p>L1E
+- <code>name</code>: name of the StableCoin ERC20 token</p>
 <ul>
-<li><a href="#function-init"><code>init(string name, string symbol, address doubleProxy, address[] allowedPairs, uint256[] rebalanceRewardMultiplier, uint256[] timeWindows, uint256[] mintables)</code></a></li>
-<li><a href="#function-allowedpairs"><code>allowedPairs()</code></a></li>
-<li><a href="#function-availabletomint"><code>availableToMint()</code></a></li>
-<li><a href="#function-differences"><code>differences()</code></a></li>
-<li><a href="#function-doubleproxy"><code>doubleProxy()</code></a></li>
-<li><a href="#function-rebalancerewardmultiplier"><code>rebalanceRewardMultiplier()</code></a></li>
-<li><a href="#function-tierdata"><code>tierData()</code></a></li>
-<li><a href="#function-setallowedpairs"><code>setAllowedPairs(address[] newAllowedPairs)</code></a></li>
-<li><a href="#function-setdoubleproxy"><code>setDoubleProxy(address newDoubleProxy)</code></a></li>
-<li><a href="#function-calculaterebalancebydebtreward"><code>calculateRebalanceByDebtReward(uint256 burnt)</code></a></li>
-<li><a href="#function-fromtokentostable"><code>fromTokenToStable(address tokenAddress, uint256 amount)</code></a></li>
-<li><a href="#function-mint"><code>mint(uint256 pairIndex, uint256 amountA, uint256 amountB, uint256 amountAMin, uint256 amountBMin)</code></a></li>
-<li><a href="#function-burn"><code>burn(uint256 pairIndex, uint256 pairAmount, uint256 amountAMin, uint256 amountBMin)</code></a></li>
-<li><a href="#function-rebalancebycredit"><code>rebalanceByCredit(uint256 pairIndex, uint256 pairAmount, uint256 amountA, uint256 amountB)</code></a></li>
-<li><a href="#function-rebalancebydebt"><code>rebalanceByDebt(uint256 amount)</code></a></li>
-</ul>
-<h3 id="function-init">Function: init</h3>
-<p><code>init(string name, string symbol, address doubleProxy, address[] allowedPairs, uint256[] rebalanceRewardMultiplier, uint256[] timeWindows, uint256[] mintables)</code></p>
-<h4 id="description">Description</h4>
-<p>Constructor signature</p>
-<h4 id="parameters">Parameters:</h4>
-<ul>
-<li>
-<p><code>name</code>: name of the StableCoin ERC20 token</p>
-</li>
 <li>
 <p><code>symbol</code>: ticker for the StableCoin ERC20 token</p>
 </li>
@@ -196,93 +159,69 @@
 <p><code>allowedPairs</code>: array of Uniswap Pairs to be set as whitelisted source tokens</p>
 </li>
 <li>
-<p><code>rebalanceRewardMultiplier</code>: multiplier used to compute how many unifi tokens to mint during uSD rebalance</p>
+<p><code>rebalanceRewardMultiplier</code>: multiplier used to compute how many unifi tokens to mint during $uSD rebalance</p>
 </li>
 <li>
 <p><code>timeWindows</code>: time windows inside which some time-delimited operations can be performed</p>
 </li>
 <li>
-<p><code>mintables</code>: max amount of mintables inside a timeWindow</p>
+<p><code>mintables</code>: max amount of mintables inside a timeWindow
+L1E
+<code>allowedPairs() → address[]</code></p>
 </li>
 </ul>
-<h3 id="function-allowedpairs">Function: allowedPairs</h3>
-<p><code>allowedPairs() → address[]</code></p>
-<h4 id="return-values">Return Values:</h4>
+<p>L1E
+- Array of allowed Uniswap pairs
+L1E
+<code>availableToMint() → uint256 mintable</code></p>
+<p>L1E
+- mintable The amount of available mintable token
+L1E
+<code>differences() → uint256, uint256</code></p>
+<p>L1E
+<code>doubleProxy() → address</code></p>
+<p>L1E
+- The address for the doubleProxy smart contract
+L1E
+<code>rebalanceRewardMultiplier() → uint256[]</code></p>
+<p>L1E
+- The multiplier used to compute the rebalancing rewards
+L1E
+<code>tierData() → uint256[], uint256[]</code></p>
+<p>L1E
+- All tiers of data of the carried context
+L1E
+<code>setAllowedPairs(address[] newAllowedPairs)</code></p>
+<p>L1E
+- <code>newAllowedPairs</code>: list of Uniswap pairs to be whitelisted
+L1E
+<code>setDoubleProxy(address newDoubleProxy)</code></p>
+<p>L1E
+- <code>newDoubleProxy</code>: new DoubleProxy to set
+L1E
+<code>calculateRebalanceByDebtReward(uint256 burnt) → uint256 reward</code>
+L1E
+Compute the reward of the rebalanceByDebt() operation.</p>
+<p>L1E
+- <code>burnt</code>: amount of of $uSD burnt
+L1E
+<code>fromTokenToStable(address tokenAddress, uint256 amount) → uint256</code>
+L1E
+Convert from one of the allowed whitelisted tokens to $uSD</p>
+<p>L1E
+- <code>tokenAddress</code>: Address of the token to convert</p>
 <ul>
-<li>Array of allowed Uniswap pairs</li>
+<li><code>amount</code>: Amount of Unifi token to be converted</li>
 </ul>
-<h3 id="function-availabletomint">Function: availableToMint</h3>
-<p><code>availableToMint() → uint256 mintable</code></p>
-<h4 id="return-values_1">Return Values:</h4>
+<p>L1E
+- Amount of $uSD tokens
+L1E
+<code>mint(uint256 pairIndex, uint256 amountA, uint256 amountB, uint256 amountAMin, uint256 amountBMin) → uint256</code>
+L1E
+Mint the $uSD token</p>
+<p>L1E
+- <code>pairIndex</code>: Index of the pair inside the allowedPairs array</p>
 <ul>
-<li>mintable The amount of available mintable token</li>
-</ul>
-<h3 id="function-differences">Function: differences</h3>
-<p><code>differences() → uint256, uint256</code></p>
-<h3 id="function-doubleproxy">Function: doubleProxy</h3>
-<p><code>doubleProxy() → address</code></p>
-<h4 id="return-values_2">Return Values:</h4>
-<ul>
-<li>The address for the doubleProxy smart contract</li>
-</ul>
-<h3 id="function-rebalancerewardmultiplier">Function: rebalanceRewardMultiplier</h3>
-<p><code>rebalanceRewardMultiplier() → uint256[]</code></p>
-<h4 id="return-values_3">Return Values:</h4>
-<ul>
-<li>The multiplier used to compute the rebalancing rewards</li>
-</ul>
-<h3 id="function-tierdata">Function: tierData</h3>
-<p><code>tierData() → uint256[], uint256[]</code></p>
-<h4 id="return-values_4">Return Values:</h4>
-<ul>
-<li>All tiers of data of the carried context</li>
-</ul>
-<h3 id="function-setallowedpairs">Function: setAllowedPairs</h3>
-<p><code>setAllowedPairs(address[] newAllowedPairs)</code></p>
-<h4 id="parameters_1">Parameters:</h4>
-<ul>
-<li><code>newAllowedPairs</code>: list of Uniswap pairs to be whitelisted</li>
-</ul>
-<h3 id="function-setdoubleproxy">Function: setDoubleProxy</h3>
-<p><code>setDoubleProxy(address newDoubleProxy)</code></p>
-<h4 id="parameters_2">Parameters:</h4>
-<ul>
-<li><code>newDoubleProxy</code>: new DoubleProxy to set</li>
-</ul>
-<h3 id="function-calculaterebalancebydebtreward">Function: calculateRebalanceByDebtReward</h3>
-<p><code>calculateRebalanceByDebtReward(uint256 burnt) → uint256 reward</code></p>
-<h4 id="description_1">Description</h4>
-<p>Compute the reward of the rebalanceByDebt() operation.</p>
-<h4 id="parameters_3">Parameters:</h4>
-<ul>
-<li><code>burnt</code>: amount of of uSD burnt</li>
-</ul>
-<h3 id="function-fromtokentostable">Function: fromTokenToStable</h3>
-<p><code>fromTokenToStable(address tokenAddress, uint256 amount) → uint256</code></p>
-<h4 id="description_2">Description</h4>
-<p>Convert from one of the allowed whitelisted tokens to uSD</p>
-<h4 id="parameters_4">Parameters:</h4>
-<ul>
-<li>
-<p><code>tokenAddress</code>: Address of the token to convert</p>
-</li>
-<li>
-<p><code>amount</code>: Amount of Unifi token to be converted</p>
-</li>
-</ul>
-<h4 id="return-values_5">Return Values:</h4>
-<ul>
-<li>Amount of uSD tokens</li>
-</ul>
-<h3 id="function-mint">Function: mint</h3>
-<p><code>mint(uint256 pairIndex, uint256 amountA, uint256 amountB, uint256 amountAMin, uint256 amountBMin) → uint256</code></p>
-<h4 id="description_3">Description</h4>
-<p>Mint the uSD token</p>
-<h4 id="parameters_5">Parameters:</h4>
-<ul>
-<li>
-<p><code>pairIndex</code>: Index of the pair inside the allowedPairs array</p>
-</li>
 <li>
 <p><code>amountA</code>: The amount of tokenA to add as liquidity if the B/A price is &lt;=
 amountBDesired/amountADesired (A depreciates)</p>
@@ -300,19 +239,15 @@ Must be &lt;= amountADesired</p>
 Must be &lt;= amountBDesired</p>
 </li>
 </ul>
-<h4 id="return-values_6">Return Values:</h4>
+<p>L1E
+- Amount of freshly minted $uSD token
+L1E
+<code>burn(uint256 pairIndex, uint256 pairAmount, uint256 amountAMin, uint256 amountBMin) → uint256 amountA, uint256 amountB</code>
+L1E
+Mint the $uSD token</p>
+<p>L1E
+- <code>pairIndex</code>: Index of the pair inside the allowedPairs array</p>
 <ul>
-<li>Amount of freshly minted uSD token</li>
-</ul>
-<h3 id="function-burn">Function: burn</h3>
-<p><code>burn(uint256 pairIndex, uint256 pairAmount, uint256 amountAMin, uint256 amountBMin) → uint256 amountA, uint256 amountB</code></p>
-<h4 id="description_4">Description</h4>
-<p>Mint the uSD token</p>
-<h4 id="parameters_6">Parameters:</h4>
-<ul>
-<li>
-<p><code>pairIndex</code>: Index of the pair inside the allowedPairs array</p>
-</li>
 <li>
 <p><code>amountAMin</code>: The minimum amount of tokenA that must be received for the transaction not to revert</p>
 </li>
@@ -320,25 +255,22 @@ Must be &lt;= amountBDesired</p>
 <p><code>amountBMin</code>: The minimum amount of tokenB that must be received for the transaction not to revert</p>
 </li>
 </ul>
-<h4 id="return-values_7">Return Values:</h4>
+<p>L1E
+- amountA The amount of tokenA received</p>
 <ul>
-<li>
-<p>amountA The amount of tokenA received</p>
-</li>
-<li>
-<p>amountB The amount of tokenB received</p>
-</li>
+<li>amountB The amount of tokenB received
+L1E
+<code>rebalanceByCredit(uint256 pairIndex, uint256 pairAmount, uint256 amountA, uint256 amountB) → uint256 redeemed</code>
+L1E
+Rebalance by Credit is triggered when the total amount of source tokens' is greater
+than $uSD circulating supply. Rebalancing is done by withdrawing the excess from the pool.</li>
 </ul>
-<h3 id="function-rebalancebycredit">Function: rebalanceByCredit</h3>
-<p><code>rebalanceByCredit(uint256 pairIndex, uint256 pairAmount, uint256 amountA, uint256 amountB) → uint256 redeemed</code></p>
-<h4 id="description_5">Description</h4>
-<p>Rebalance by Credit is triggered when the total amount of source tokens' value is greater
-than uSD circulating supply. Rebalancing is done by withdrawing the excess from the pool.</p>
-<h3 id="function-rebalancebydebt">Function: rebalanceByDebt</h3>
-<p><code>rebalanceByDebt(uint256 amount) → uint256</code></p>
-<h4 id="description_6">Description</h4>
-<p>Rebalance by Credit is triggered when the total amount of source tokens' value is greater
-than uSD circulating supply. Rebalancing is done by withdrawing the excess from the pool.</p>
+<p>L1E
+<code>rebalanceByDebt(uint256 amount) → uint256</code>
+L1E
+Rebalance by Debt is triggered when the total amount of source tokens' is lesser
+than $uSD circulating supply. Rebalancing is done by minting new equity ($unifi) at premium
+in exchange for burning $uSD.</p>
               
             </div>
           </div>

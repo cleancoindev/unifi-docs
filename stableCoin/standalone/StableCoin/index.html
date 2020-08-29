@@ -113,68 +113,66 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="stablecoin">StableCoin</h1>
-<p>Contract for the "uSD" Stable Coin.
+                <p>L1E</p>
+<p>Contract for the $uSD Stable Coin.
 It's an ERC20 token extended with the IStableCoin interface and DFO protocol magic.</p>
-<h2 id="functions">Functions:</h2>
-<ul>
-<li><a href="#function-constructor"><code>constructor(string name, string symbol, address doubleProxy, address[] allowedPairs, uint256[] rebalanceRewardMultiplier, uint256[] timeWindows, uint256[] mintables)</code></a></li>
-<li><a href="#function-init"><code>init(string name, string symbol, address doubleProxy, address[] allowedPairs, uint256[] rebalanceRewardMultiplier, uint256[] timeWindows, uint256[] mintables)</code></a></li>
-<li><a href="#function-allowedpairs"><code>allowedPairs()</code></a></li>
-<li><a href="#function-availabletomint"><code>availableToMint()</code></a></li>
-<li><a href="#function-differences"><code>differences()</code></a></li>
-<li><a href="#function-doubleproxy"><code>doubleProxy()</code></a></li>
-<li><a href="#function-rebalancerewardmultiplier"><code>rebalanceRewardMultiplier()</code></a></li>
-<li><a href="#function-tierdata"><code>tierData()</code></a></li>
-<li><a href="#function-setallowedpairs"><code>setAllowedPairs(address[] newAllowedPairs)</code></a></li>
-<li><a href="#function-setdoubleproxy"><code>setDoubleProxy(address newDoubleProxy)</code></a></li>
-<li><a href="#function-calculaterebalancebydebtreward"><code>calculateRebalanceByDebtReward(uint256 burnt)</code></a></li>
-<li><a href="#function-fromtokentostable"><code>fromTokenToStable(address tokenAddress, uint256 amount)</code></a></li>
-<li><a href="#function-mint"><code>mint(uint256 pairIndex, uint256 amountA, uint256 amountB, uint256 amountAMin, uint256 amountBMin)</code></a></li>
-<li><a href="#function-burn"><code>burn(uint256 pairIndex, uint256 pairAmount, uint256 amountAMin, uint256 amountBMin)</code></a></li>
-<li><a href="#function-rebalancebycredit"><code>rebalanceByCredit(uint256 pairIndex, uint256 pairAmount, uint256 amountA, uint256 amountB)</code></a></li>
-<li><a href="#function-rebalancebydebt"><code>rebalanceByDebt(uint256 amount)</code></a></li>
-</ul>
-<h3 id="function-constructor">Function: constructor</h3>
-<p><code>constructor(string name, string symbol, address doubleProxy, address[] allowedPairs, uint256[] rebalanceRewardMultiplier, uint256[] timeWindows, uint256[] mintables)</code></p>
-<h4 id="description">Description</h4>
-<p>Contract constructor. See StableCoin.init() docs.</p>
-<h3 id="function-init">Function: init</h3>
-<p><code>init(string name, string symbol, address doubleProxy, address[] allowedPairs, uint256[] rebalanceRewardMultiplier, uint256[] timeWindows, uint256[] mintables)</code></p>
-<h3 id="function-allowedpairs">Function: allowedPairs</h3>
-<p><code>allowedPairs() → address[]</code></p>
-<h3 id="function-availabletomint">Function: availableToMint</h3>
-<p><code>availableToMint() → uint256</code></p>
-<h3 id="function-differences">Function: differences</h3>
-<p><code>differences() → uint256 credit, uint256 debt</code></p>
-<h3 id="function-doubleproxy">Function: doubleProxy</h3>
-<p><code>doubleProxy() → address</code></p>
-<h3 id="function-rebalancerewardmultiplier">Function: rebalanceRewardMultiplier</h3>
-<p><code>rebalanceRewardMultiplier() → uint256[]</code></p>
-<h3 id="function-tierdata">Function: tierData</h3>
-<p><code>tierData() → uint256[], uint256[]</code></p>
-<h3 id="function-setallowedpairs">Function: setAllowedPairs</h3>
-<p><code>setAllowedPairs(address[] newAllowedPairs)</code></p>
-<h3 id="function-setdoubleproxy">Function: setDoubleProxy</h3>
-<p><code>setDoubleProxy(address newDoubleProxy)</code></p>
-<h3 id="function-calculaterebalancebydebtreward">Function: calculateRebalanceByDebtReward</h3>
-<p><code>calculateRebalanceByDebtReward(uint256 burnt) → uint256 reward</code></p>
-<h3 id="function-fromtokentostable">Function: fromTokenToStable</h3>
-<p><code>fromTokenToStable(address tokenAddress, uint256 amount) → uint256</code></p>
-<h3 id="function-mint">Function: mint</h3>
-<p><code>mint(uint256 pairIndex, uint256 amountA, uint256 amountB, uint256 amountAMin, uint256 amountBMin) → uint256 minted</code></p>
-<h4 id="description_1">Description</h4>
-<p>Minting first check tha DFO auth protocol are respected, secondly it sends the tokens
-to a Uniswap Pool (_createPoolToken)</p>
-<h3 id="function-burn">Function: burn</h3>
-<p><code>burn(uint256 pairIndex, uint256 pairAmount, uint256 amountAMin, uint256 amountBMin) → uint256 removedA, uint256 removedB</code></p>
-<h3 id="function-rebalancebycredit">Function: rebalanceByCredit</h3>
-<p><code>rebalanceByCredit(uint256 pairIndex, uint256 pairAmount, uint256 amountA, uint256 amountB) → uint256 redeemed</code></p>
-<h4 id="description_2">Description</h4>
-<p>Rebalance by Credit is triggered when the total amount of source tokens is greater
+<p>L1E
+- [<code>constructor(string name, string symbol, address doubleProxy, address[] allowedPairs, uint256[] rebalanceRewardMultiplier, uint256[] timeWindows, uint256[] mintables)</code>](L1E
+- [<code>init(string name, string symbol, address doubleProxy, address[] allowedPairs, uint256[] rebalanceRewardMultiplier, uint256[] timeWindows, uint256[] mintables)</code>](L1E
+- [<code>allowedPairs()</code>](L1E
+- [<code>availableToMint()</code>](L1E
+- [<code>differences()</code>](L1E
+- [<code>doubleProxy()</code>](L1E
+- [<code>rebalanceRewardMultiplier()</code>](L1E
+- [<code>tierData()</code>](L1E
+- [<code>setAllowedPairs(address[] newAllowedPairs)</code>](L1E
+- [<code>setDoubleProxy(address newDoubleProxy)</code>](L1E
+- [<code>calculateRebalanceByDebtReward(uint256 burnt)</code>](L1E
+- [<code>fromTokenToStable(address tokenAddress, uint256 amount)</code>](L1E
+- [<code>mint(uint256 pairIndex, uint256 amountA, uint256 amountB, uint256 amountAMin, uint256 amountBMin)</code>](L1E
+- [<code>burn(uint256 pairIndex, uint256 pairAmount, uint256 amountAMin, uint256 amountBMin)</code>](L1E
+- [<code>rebalanceByCredit(uint256 pairIndex, uint256 pairAmount, uint256 amountA, uint256 amountB)</code>](L1E
+- [<code>rebalanceByDebt(uint256 amount)</code>](L1E</p>
+<p>L1E
+<code>constructor(string name, string symbol, address doubleProxy, address[] allowedPairs, uint256[] rebalanceRewardMultiplier, uint256[] timeWindows, uint256[] mintables)</code>
+L1E
+Contract constructor. See StableCoin.init() docs.
+L1E
+<code>init(string name, string symbol, address doubleProxy, address[] allowedPairs, uint256[] rebalanceRewardMultiplier, uint256[] timeWindows, uint256[] mintables)</code></p>
+<p>L1E
+<code>allowedPairs() → address[]</code></p>
+<p>L1E
+<code>availableToMint() → uint256</code></p>
+<p>L1E
+<code>differences() → uint256 credit, uint256 debt</code></p>
+<p>L1E
+<code>doubleProxy() → address</code></p>
+<p>L1E
+<code>rebalanceRewardMultiplier() → uint256[]</code></p>
+<p>L1E
+<code>tierData() → uint256[], uint256[]</code></p>
+<p>L1E
+<code>setAllowedPairs(address[] newAllowedPairs)</code></p>
+<p>L1E
+<code>setDoubleProxy(address newDoubleProxy)</code></p>
+<p>L1E
+<code>calculateRebalanceByDebtReward(uint256 burnt) → uint256 reward</code></p>
+<p>L1E
+<code>fromTokenToStable(address tokenAddress, uint256 amount) → uint256</code></p>
+<p>L1E
+<code>mint(uint256 pairIndex, uint256 amountA, uint256 amountB, uint256 amountAMin, uint256 amountBMin) → uint256 minted</code>
+L1E
+Minting first check tha DFO auth protocol are respected, secondly it sends the tokens
+to a Uniswap Pool (_createPoolToken)
+L1E
+<code>burn(uint256 pairIndex, uint256 pairAmount, uint256 amountAMin, uint256 amountBMin) → uint256 removedA, uint256 removedB</code></p>
+<p>L1E
+<code>rebalanceByCredit(uint256 pairIndex, uint256 pairAmount, uint256 amountA, uint256 amountB) → uint256 redeemed</code>
+L1E
+Rebalance by Credit is triggered when the total amount of source tokens is greater
 than uSD circulating supply. Rebalancing is done by withdrawing the excess from the pool.</p>
-<h3 id="function-rebalancebydebt">Function: rebalanceByDebt</h3>
-<p><code>rebalanceByDebt(uint256 amount) → uint256 reward</code></p>
+<p>L1E
+<code>rebalanceByDebt(uint256 amount) → uint256 reward</code></p>
               
             </div>
           </div>
