@@ -113,69 +113,73 @@
           <div role="main">
             <div class="section">
               
-                <p>L1E</p>
+                <h1 id="ierc20">IERC20</h1>
 <p>Interface of the ERC20 standard as defined in the EIP.</p>
-<p>L1E
-- [<code>totalSupply()</code>](L1E
-- [<code>balanceOf(address account)</code>](L1E
-- [<code>transfer(address recipient, uint256 amount)</code>](L1E
-- [<code>allowance(address owner, address spender)</code>](L1E
-- [<code>approve(address spender, uint256 amount)</code>](L1E
-- [<code>transferFrom(address sender, address recipient, uint256 amount)</code>](L1E</p>
-<p>L1E
-- [<code>Transfer(address from, address to, uint256 value)</code>](L1E
-- [<code>Approval(address owner, address spender, uint256 value)</code>](L1E</p>
-<p>L1E
-<code>totalSupply() → uint256</code>
-L1E
-Returns the amount of tokens in existence.
-L1E
-<code>balanceOf(address account) → uint256</code>
-L1E
-Returns the amount of tokens owned by <code>account</code>.
-L1E
-<code>transfer(address recipient, uint256 amount) → bool</code>
-L1E
-Moves <code>amount</code> tokens from the caller's account to <code>recipient</code>.
+<h2 id="functions">Functions:</h2>
+<ul>
+<li><a href="#function-totalsupply"><code>totalSupply()</code></a></li>
+<li><a href="#function-balanceof"><code>balanceOf(address account)</code></a></li>
+<li><a href="#function-transfer"><code>transfer(address recipient, uint256 amount)</code></a></li>
+<li><a href="#function-allowance"><code>allowance(address owner, address spender)</code></a></li>
+<li><a href="#function-approve"><code>approve(address spender, uint256 amount)</code></a></li>
+<li><a href="#function-transferfrom"><code>transferFrom(address sender, address recipient, uint256 amount)</code></a></li>
+</ul>
+<h2 id="events">Events:</h2>
+<ul>
+<li><a href="#event-transfer"><code>Transfer(address from, address to, uint256 value)</code></a></li>
+<li><a href="#event-approval"><code>Approval(address owner, address spender, uint256 value)</code></a></li>
+</ul>
+<h3 id="function-totalsupply">Function: totalSupply</h3>
+<p><code>totalSupply() → uint256</code></p>
+<h4 id="description">Description</h4>
+<p>Returns the amount of tokens in existence.</p>
+<h3 id="function-balanceof">Function: balanceOf</h3>
+<p><code>balanceOf(address account) → uint256</code></p>
+<h4 id="description_1">Description</h4>
+<p>Returns the amount of tokens owned by <code>account</code>.</p>
+<h3 id="function-transfer">Function: transfer</h3>
+<p><code>transfer(address recipient, uint256 amount) → bool</code></p>
+<h4 id="description_2">Description</h4>
+<p>Moves <code>amount</code> tokens from the caller's account to <code>recipient</code>.
 Returns a boolean value indicating whether the operation succeeded.
-Emits a {Transfer} event.
-L1E
-<code>allowance(address owner, address spender) → uint256</code>
-L1E
-Returns the remaining number of tokens that <code>spender</code> will be
+Emits a {Transfer} event.</p>
+<h3 id="function-allowance">Function: allowance</h3>
+<p><code>allowance(address owner, address spender) → uint256</code></p>
+<h4 id="description_3">Description</h4>
+<p>Returns the remaining number of tokens that <code>spender</code> will be
 allowed to spend on behalf of <code>owner</code> through {transferFrom}. This is
 zero by default.
-This value changes when {approve} or {transferFrom} are called.
-L1E
-<code>approve(address spender, uint256 amount) → bool</code>
-L1E
-Sets <code>amount</code> as the allowance of <code>spender</code> over the caller's tokens.
+This value changes when {approve} or {transferFrom} are called.</p>
+<h3 id="function-approve">Function: approve</h3>
+<p><code>approve(address spender, uint256 amount) → bool</code></p>
+<h4 id="description_4">Description</h4>
+<p>Sets <code>amount</code> as the allowance of <code>spender</code> over the caller's tokens.
 Returns a boolean value indicating whether the operation succeeded.
 IMPORTANT: Beware that changing an allowance with this method brings the risk
 that someone may use both the old and the new allowance by unfortunate
 transaction ordering. One possible solution to mitigate this race
 condition is to first reduce the spender's allowance to 0 and set the
 desired value afterwards:
-https://github.com/ethereum/EIPs/issues/20L1E
-Emits an {Approval} event.
-L1E
-<code>transferFrom(address sender, address recipient, uint256 amount) → bool</code>
-L1E
-Moves <code>amount</code> tokens from <code>sender</code> to <code>recipient</code> using the
+https://github.com/ethereum/EIPs/issues/20#issuecomment-263524729
+Emits an {Approval} event.</p>
+<h3 id="function-transferfrom">Function: transferFrom</h3>
+<p><code>transferFrom(address sender, address recipient, uint256 amount) → bool</code></p>
+<h4 id="description_5">Description</h4>
+<p>Moves <code>amount</code> tokens from <code>sender</code> to <code>recipient</code> using the
 allowance mechanism. <code>amount</code> is then deducted from the caller's
 allowance.
 Returns a boolean value indicating whether the operation succeeded.
 Emits a {Transfer} event.</p>
-<p>L1E
-<code>Transfer(address from, address to, uint256 value)</code>
-L1E
-Emitted when <code>value</code> tokens are moved from one account (<code>from</code>) to
+<h3 id="event-transfer">Event: Transfer</h3>
+<p><code>Transfer(address from, address to, uint256 value)</code></p>
+<h4 id="description_6">Description</h4>
+<p>Emitted when <code>value</code> tokens are moved from one account (<code>from</code>) to
 another (<code>to</code>).
-Note that <code>value</code> may be zero.
-L1E
-<code>Approval(address owner, address spender, uint256 value)</code>
-L1E
-Emitted when the allowance of a <code>spender</code> for an <code>owner</code> is set by
+Note that <code>value</code> may be zero.</p>
+<h3 id="event-approval">Event: Approval</h3>
+<p><code>Approval(address owner, address spender, uint256 value)</code></p>
+<h4 id="description_7">Description</h4>
+<p>Emitted when the allowance of a <code>spender</code> for an <code>owner</code> is set by
 a call to {approve}. <code>value</code> is the new allowance.</p>
               
             </div>

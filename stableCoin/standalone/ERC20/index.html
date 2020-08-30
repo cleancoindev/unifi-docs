@@ -113,7 +113,7 @@
           <div role="main">
             <div class="section">
               
-                <p>L1E</p>
+                <h1 id="erc20">ERC20</h1>
 <p>Implementation of the {IERC20} interface.
 This implementation is agnostic to the way tokens are created. This means
 that a supply mechanism has to be added in a derived contract using {_mint}.
@@ -131,31 +131,33 @@ these events, as it isn't required by the specification.
 Finally, the non-standard {decreaseAllowance} and {increaseAllowance}
 functions have been added to mitigate the well-known issues around setting
 allowances. See {IERC20-approve}.</p>
-<p>L1E
-- [<code>name()</code>](L1E
-- [<code>symbol()</code>](L1E
-- [<code>decimals()</code>](L1E
-- [<code>totalSupply()</code>](L1E
-- [<code>balanceOf(address account)</code>](L1E
-- [<code>transfer(address recipient, uint256 amount)</code>](L1E
-- [<code>allowance(address owner, address spender)</code>](L1E
-- [<code>approve(address spender, uint256 amount)</code>](L1E
-- [<code>transferFrom(address sender, address recipient, uint256 amount)</code>](L1E
-- [<code>increaseAllowance(address spender, uint256 addedValue)</code>](L1E
-- [<code>decreaseAllowance(address spender, uint256 subtractedValue)</code>](L1E</p>
-<p>L1E
-<code>name() → string</code>
-L1E
-Returns the name of the token.
-L1E
-<code>symbol() → string</code>
-L1E
-Returns the symbol of the token, usually a shorter version of the
-name.
-L1E
-<code>decimals() → uint8</code>
-L1E
-Returns the number of decimals used to get its user representation.
+<h2 id="functions">Functions:</h2>
+<ul>
+<li><a href="#function-name"><code>name()</code></a></li>
+<li><a href="#function-symbol"><code>symbol()</code></a></li>
+<li><a href="#function-decimals"><code>decimals()</code></a></li>
+<li><a href="#function-totalsupply"><code>totalSupply()</code></a></li>
+<li><a href="#function-balanceof"><code>balanceOf(address account)</code></a></li>
+<li><a href="#function-transfer"><code>transfer(address recipient, uint256 amount)</code></a></li>
+<li><a href="#function-allowance"><code>allowance(address owner, address spender)</code></a></li>
+<li><a href="#function-approve"><code>approve(address spender, uint256 amount)</code></a></li>
+<li><a href="#function-transferfrom"><code>transferFrom(address sender, address recipient, uint256 amount)</code></a></li>
+<li><a href="#function-increaseallowance"><code>increaseAllowance(address spender, uint256 addedValue)</code></a></li>
+<li><a href="#function-decreaseallowance"><code>decreaseAllowance(address spender, uint256 subtractedValue)</code></a></li>
+</ul>
+<h3 id="function-name">Function: name</h3>
+<p><code>name() → string</code></p>
+<h4 id="description">Description</h4>
+<p>Returns the name of the token.</p>
+<h3 id="function-symbol">Function: symbol</h3>
+<p><code>symbol() → string</code></p>
+<h4 id="description_1">Description</h4>
+<p>Returns the symbol of the token, usually a shorter version of the
+name.</p>
+<h3 id="function-decimals">Function: decimals</h3>
+<p><code>decimals() → uint8</code></p>
+<h4 id="description_2">Description</h4>
+<p>Returns the number of decimals used to get its user representation.
 For example, if <code>decimals</code> equals <code>2</code>, a balance of <code>505</code> tokens should
 be displayed to a user as <code>5,05</code> (<code>505 / 10 ** 2</code>).
 Tokens usually opt for a value of 18, imitating the relationship between
@@ -163,56 +165,56 @@ Ether and Wei. This is the value {ERC20} uses, unless {<em>setupDecimals} is
 called.
 NOTE: This information is only used for _display</em> purposes: it in
 no way affects any of the arithmetic of the contract, including
-{IERC20-balanceOf} and {IERC20-transfer}.
-L1E
-<code>totalSupply() → uint256</code>
-L1E
-See {IERC20-totalSupply}.
-L1E
-<code>balanceOf(address account) → uint256</code>
-L1E
-See {IERC20-balanceOf}.
-L1E
-<code>transfer(address recipient, uint256 amount) → bool</code>
-L1E
-See {IERC20-transfer}.
+{IERC20-balanceOf} and {IERC20-transfer}.</p>
+<h3 id="function-totalsupply">Function: totalSupply</h3>
+<p><code>totalSupply() → uint256</code></p>
+<h4 id="description_3">Description</h4>
+<p>See {IERC20-totalSupply}.</p>
+<h3 id="function-balanceof">Function: balanceOf</h3>
+<p><code>balanceOf(address account) → uint256</code></p>
+<h4 id="description_4">Description</h4>
+<p>See {IERC20-balanceOf}.</p>
+<h3 id="function-transfer">Function: transfer</h3>
+<p><code>transfer(address recipient, uint256 amount) → bool</code></p>
+<h4 id="description_5">Description</h4>
+<p>See {IERC20-transfer}.
 Requirements:
 - <code>recipient</code> cannot be the zero address.
-- the caller must have a balance of at least <code>amount</code>.
-L1E
-<code>allowance(address owner, address spender) → uint256</code>
-L1E
-See {IERC20-allowance}.
-L1E
-<code>approve(address spender, uint256 amount) → bool</code>
-L1E
-See {IERC20-approve}.
+- the caller must have a balance of at least <code>amount</code>.</p>
+<h3 id="function-allowance">Function: allowance</h3>
+<p><code>allowance(address owner, address spender) → uint256</code></p>
+<h4 id="description_6">Description</h4>
+<p>See {IERC20-allowance}.</p>
+<h3 id="function-approve">Function: approve</h3>
+<p><code>approve(address spender, uint256 amount) → bool</code></p>
+<h4 id="description_7">Description</h4>
+<p>See {IERC20-approve}.
 Requirements:
-- <code>spender</code> cannot be the zero address.
-L1E
-<code>transferFrom(address sender, address recipient, uint256 amount) → bool</code>
-L1E
-See {IERC20-transferFrom}.
+- <code>spender</code> cannot be the zero address.</p>
+<h3 id="function-transferfrom">Function: transferFrom</h3>
+<p><code>transferFrom(address sender, address recipient, uint256 amount) → bool</code></p>
+<h4 id="description_8">Description</h4>
+<p>See {IERC20-transferFrom}.
 Emits an {Approval} event indicating the updated allowance. This is not
 required by the EIP. See the note at the beginning of {ERC20};
 Requirements:
 - <code>sender</code> and <code>recipient</code> cannot be the zero address.
 - <code>sender</code> must have a balance of at least <code>amount</code>.
 - the caller must have allowance for <code>sender</code>'s tokens of at least
-<code>amount</code>.
-L1E
-<code>increaseAllowance(address spender, uint256 addedValue) → bool</code>
-L1E
-Atomically increases the allowance granted to <code>spender</code> by the caller.
+<code>amount</code>.</p>
+<h3 id="function-increaseallowance">Function: increaseAllowance</h3>
+<p><code>increaseAllowance(address spender, uint256 addedValue) → bool</code></p>
+<h4 id="description_9">Description</h4>
+<p>Atomically increases the allowance granted to <code>spender</code> by the caller.
 This is an alternative to {approve} that can be used as a mitigation for
 problems described in {IERC20-approve}.
 Emits an {Approval} event indicating the updated allowance.
 Requirements:
-- <code>spender</code> cannot be the zero address.
-L1E
-<code>decreaseAllowance(address spender, uint256 subtractedValue) → bool</code>
-L1E
-Atomically decreases the allowance granted to <code>spender</code> by the caller.
+- <code>spender</code> cannot be the zero address.</p>
+<h3 id="function-decreaseallowance">Function: decreaseAllowance</h3>
+<p><code>decreaseAllowance(address spender, uint256 subtractedValue) → bool</code></p>
+<h4 id="description_10">Description</h4>
+<p>Atomically decreases the allowance granted to <code>spender</code> by the caller.
 This is an alternative to {approve} that can be used as a mitigation for
 problems described in {IERC20-approve}.
 Emits an {Approval} event indicating the updated allowance.
