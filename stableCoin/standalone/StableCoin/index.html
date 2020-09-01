@@ -74,6 +74,12 @@
                 </li>
     </ul>
                     </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Farming</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../farming/IUnifiedStableFarming/">IUnifiedStableFarming</a>
+                </li>
+    </ul>
+                    </li>
                     <li class="toctree-l1"><a class="reference internal" href="#">Microservices</a>
     <ul>
                 <li class="toctree-l2"><a class="reference internal" href="../../microservices/MintNewVotingTokensForStableCoinFunctionality/">MintNewVotingTokensForStableCoinFunctionality</a>
@@ -168,9 +174,11 @@ It's an ERC20 token extended with the IStableCoin interface and DFO protocol mag
 to a Uniswap Pool (_createPoolToken)</p>
 <h3 id="function-burn">Function: burn</h3>
 <p><code>burn(uint256 pairIndex, uint256 pairAmount, uint256 amountAMin, uint256 amountBMin) → uint256 removedA, uint256 removedB</code></p>
+<h4 id="description_2">Description</h4>
+<p>Burn $usd to get back stablecoins from the pools</p>
 <h3 id="function-rebalancebycredit">Function: rebalanceByCredit</h3>
 <p><code>rebalanceByCredit(uint256 pairIndex, uint256 pairAmount, uint256 amountA, uint256 amountB) → uint256 redeemed</code></p>
-<h4 id="description_2">Description</h4>
+<h4 id="description_3">Description</h4>
 <p>Rebalance by Credit is triggered when the total amount of source tokens is greater
 than uSD circulating supply. Rebalancing is done by withdrawing the excess from the pool.</p>
 <h3 id="function-rebalancebydebt">Function: rebalanceByDebt</h3>

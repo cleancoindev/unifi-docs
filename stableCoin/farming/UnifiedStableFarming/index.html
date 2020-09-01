@@ -9,7 +9,7 @@
   
   
   <link rel="shortcut icon" href="../../../img/favicon.ico">
-  <title>IMVDProxy - Unifi Docs</title>
+  <title>UnifiedStableFarming - Unifi Docs</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../../../css/theme.css" />
@@ -18,8 +18,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "IMVDProxy";
-    var mkdocs_page_input_path = "stableCoin/standalone/IMVDProxy.md";
+    var mkdocs_page_name = "UnifiedStableFarming";
+    var mkdocs_page_input_path = "stableCoin/farming/UnifiedStableFarming.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -59,40 +59,24 @@
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">API</span></p>
-                <ul class="current">
-                    <li class="toctree-l1 current"><a class="reference internal current" href="#">Stable Coin</a>
-    <ul class="current">
-                <li class="toctree-l2"><a class="reference internal" href="../IDoubleProxy/">IDoubleProxy</a>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Stable Coin</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../standalone/IDoubleProxy/">IDoubleProxy</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../IMVDFunctionalitiesManager/">IMVDFunctionalitiesManager</a>
+                <li class="toctree-l2"><a class="reference internal" href="../../standalone/IMVDFunctionalitiesManager/">IMVDFunctionalitiesManager</a>
                 </li>
-                <li class="toctree-l2 current"><a class="reference internal current" href="./">IMVDProxy</a>
-    <ul class="current">
-    <li class="toctree-l3"><a class="reference internal" href="#functions">Functions:</a>
-        <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#function-gettoken">Function: getToken</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#function-getmvdfunctionalitiesmanageraddress">Function: getMVDFunctionalitiesManagerAddress</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#function-getmvdwalletaddress">Function: getMVDWalletAddress</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#function-getstateholderaddress">Function: getStateHolderAddress</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#function-submit">Function: submit</a>
-    </li>
-        </ul>
-    </li>
-    </ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../standalone/IMVDProxy/">IMVDProxy</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../IStateHolder/">IStateHolder</a>
+                <li class="toctree-l2"><a class="reference internal" href="../../standalone/IStateHolder/">IStateHolder</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../IStableCoin/">IStableCoin</a>
+                <li class="toctree-l2"><a class="reference internal" href="../../standalone/IStableCoin/">IStableCoin</a>
                 </li>
     </ul>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="#">Farming</a>
     <ul>
-                <li class="toctree-l2"><a class="reference internal" href="../../farming/IUnifiedStableFarming/">IUnifiedStableFarming</a>
+                <li class="toctree-l2"><a class="reference internal" href="../IUnifiedStableFarming/">IUnifiedStableFarming</a>
                 </li>
     </ul>
                     </li>
@@ -123,16 +107,8 @@
     <li><a href="../../..">Docs</a> &raquo;</li>
     
       
-        
-          <li>Stable Coin &raquo;</li>
-        
-      
-        
-          <li>API &raquo;</li>
-        
-      
     
-    <li>IMVDProxy</li>
+    <li>UnifiedStableFarming</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -143,38 +119,26 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="imvdproxy">IMVDProxy</h1>
+                <h1 id="unifiedstablefarming">UnifiedStableFarming</h1>
 <h2 id="functions">Functions:</h2>
 <ul>
-<li><a href="#function-gettoken"><code>getToken()</code></a></li>
-<li><a href="#function-getmvdfunctionalitiesmanageraddress"><code>getMVDFunctionalitiesManagerAddress()</code></a></li>
-<li><a href="#function-getmvdwalletaddress"><code>getMVDWalletAddress()</code></a></li>
-<li><a href="#function-getstateholderaddress"><code>getStateHolderAddress()</code></a></li>
-<li><a href="#function-submit"><code>submit(string codeName, bytes data)</code></a></li>
+<li><a href="#function-constructor"><code>constructor(uint256[] percentage)</code></a></li>
+<li><a href="#function-percentage"><code>percentage()</code></a></li>
+<li><a href="#function-earnbypump"><code>earnByPump(address stableCoinAddress, uint256 pairIndex, uint256 pairAmount, uint256 amountAMin, uint256 amountBMin, address tokenAddress, uint256 tokenValue)</code></a></li>
+<li><a href="#function-earnbydump"><code>earnByDump(address stableCoinAddress, uint256 pairIndex, uint256 amountA, uint256 amountB, uint256 amountAMin, uint256 amountBMin, uint256[] tokenIndices, uint256[] stableCoinAmounts)</code></a></li>
 </ul>
-<h3 id="function-gettoken">Function: getToken</h3>
-<p><code>getToken() → address</code></p>
-<h3 id="function-getmvdfunctionalitiesmanageraddress">Function: getMVDFunctionalitiesManagerAddress</h3>
-<p><code>getMVDFunctionalitiesManagerAddress() → address</code></p>
-<h3 id="function-getmvdwalletaddress">Function: getMVDWalletAddress</h3>
-<p><code>getMVDWalletAddress() → address</code></p>
-<h3 id="function-getstateholderaddress">Function: getStateHolderAddress</h3>
-<p><code>getStateHolderAddress() → address</code></p>
-<h3 id="function-submit">Function: submit</h3>
-<p><code>submit(string codeName, bytes data) → bytes returnData</code></p>
+<h3 id="function-constructor">Function: constructor</h3>
+<p><code>constructor(uint256[] percentage)</code></p>
+<h3 id="function-percentage">Function: percentage</h3>
+<p><code>percentage() → uint256[]</code></p>
+<h3 id="function-earnbypump">Function: earnByPump</h3>
+<p><code>earnByPump(address stableCoinAddress, uint256 pairIndex, uint256 pairAmount, uint256 amountAMin, uint256 amountBMin, address tokenAddress, uint256 tokenValue)</code></p>
+<h3 id="function-earnbydump">Function: earnByDump</h3>
+<p><code>earnByDump(address stableCoinAddress, uint256 pairIndex, uint256 amountA, uint256 amountB, uint256 amountAMin, uint256 amountBMin, uint256[] tokenIndices, uint256[] stableCoinAmounts)</code></p>
               
             </div>
           </div>
           <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="../IStateHolder/" class="btn btn-neutral float-right" title="IStateHolder">Next <span class="icon icon-circle-arrow-right"></span></a>
-      
-      
-        <a href="../IMVDFunctionalitiesManager/" class="btn btn-neutral" title="IMVDFunctionalitiesManager"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-      
-    </div>
   
 
   <hr/>
@@ -198,10 +162,6 @@
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../IMVDFunctionalitiesManager/" style="color: #fcfcfc;">&laquo; Previous</a></span>
-      
-      
-        <span style="margin-left: 15px"><a href="../IStateHolder/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
